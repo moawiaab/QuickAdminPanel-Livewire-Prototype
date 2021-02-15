@@ -95,6 +95,26 @@ class PermissionsTableSeeder extends Seeder
                 'title' => 'project_access',
             ],
             [
+                'id'    => 23,
+                'title' => 'client_create',
+            ],
+            [
+                'id'    => 24,
+                'title' => 'client_edit',
+            ],
+            [
+                'id'    => 25,
+                'title' => 'client_show',
+            ],
+            [
+                'id'    => 26,
+                'title' => 'client_delete',
+            ],
+            [
+                'id'    => 27,
+                'title' => 'client_access',
+            ],
+            [
                 'id'    => 22,
                 'title' => 'profile_password_edit',
             ],

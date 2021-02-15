@@ -39,6 +39,7 @@ class ProjectsController extends Controller
         $project = Project::create($request->all());
         $project->participants()->sync($request->input('participants', []));
 
+        // dd($project->participants());
         return redirect()->route('admin.projects.index');
     }
 

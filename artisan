@@ -2,7 +2,10 @@
 <?php
 
 define('LARAVEL_START', microtime(true));
-
+// define('STDIN',fopen("php://stdin","r"));
+if (!defined('STDIN')) {
+    define('STDIN', fopen('php://stdin', 'r'));
+  }
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader

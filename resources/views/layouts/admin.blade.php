@@ -113,20 +113,20 @@
     <script src="{{ asset('js/main.js') }}"></script>
     <script>
         $(function() {
-  let copyButtonTrans = '{{ trans('global.datatables.copy') }}'
-  let csvButtonTrans = '{{ trans('global.datatables.csv') }}'
-  let excelButtonTrans = '{{ trans('global.datatables.excel') }}'
-  let pdfButtonTrans = '{{ trans('global.datatables.pdf') }}'
-  let printButtonTrans = '{{ trans('global.datatables.print') }}'
-  let colvisButtonTrans = '{{ trans('global.datatables.colvis') }}'
-  let selectAllButtonTrans = '{{ trans('global.select_all') }}'
-  let selectNoneButtonTrans = '{{ trans('global.deselect_all') }}'
+  let copyButtonTrans = '<i class="far fa-copy" title="نسخ"></i>'
+  let csvButtonTrans = '<i class="fas fa-file-excel" title="تصدير الى csv"></i>'
+  let excelButtonTrans = '<i class="far fa-file-excel" title="تصدير الى excel"></i>'
+  let pdfButtonTrans = '<i class="far fa-file-pdf" title="تصدير  الىpdf"></i>'
+  let printButtonTrans = '<i class="fas fa-print" title="طباعة"></i>'
+  let colvisButtonTrans = '<i class="fas fa-columns" title="إظهار القوائم"></i>'
+  let selectAllButtonTrans = '<i class="fas fa-check-double" title="تحديد الكل"></i>'
+  let selectNoneButtonTrans = '<i class="fas fa-times" title="إلغاء التحديد"></i>'
 
   let languages = {
     'en': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json'
   };
 
-  $.extend(true, $.fn.dataTable.Buttons.defaults.dom.button, { className: 'btn' })
+  $.extend(true, $.fn.dataTable.Buttons.defaults.dom.button, { className: 'btn btn-xs' })
   $.extend(true, $.fn.dataTable.defaults, {
     language: {
       url: languages['{{ app()->getLocale() }}']
@@ -151,7 +151,7 @@
     buttons: [
       {
         extend: 'selectAll',
-        className: 'btn-primary',
+        className: 'btn-xs text-info',
         text: selectAllButtonTrans,
         exportOptions: {
           columns: ':visible'
@@ -164,7 +164,7 @@
       },
       {
         extend: 'selectNone',
-        className: 'btn-primary',
+        className: 'btn-xs text-danger',
         text: selectNoneButtonTrans,
         exportOptions: {
           columns: ':visible'
@@ -172,7 +172,7 @@
       },
       {
         extend: 'copy',
-        className: 'btn-default',
+        className: 'btn-xs text-success',
         text: copyButtonTrans,
         exportOptions: {
           columns: ':visible'
@@ -180,7 +180,7 @@
       },
       {
         extend: 'csv',
-        className: 'btn-default',
+        className: 'btn-xs ',
         text: csvButtonTrans,
         exportOptions: {
           columns: ':visible'
@@ -188,7 +188,7 @@
       },
       {
         extend: 'excel',
-        className: 'btn-default',
+        className: 'btn-xs text-success',
         text: excelButtonTrans,
         exportOptions: {
           columns: ':visible'
@@ -196,7 +196,7 @@
       },
       {
         extend: 'pdf',
-        className: 'btn-default',
+        className: 'btn-xs text-danger',
         text: pdfButtonTrans,
         exportOptions: {
           columns: ':visible'
@@ -204,7 +204,7 @@
       },
       {
         extend: 'print',
-        className: 'btn-default',
+        className: 'btn-xs',
         text: printButtonTrans,
         exportOptions: {
           columns: ':visible'
@@ -212,7 +212,7 @@
       },
       {
         extend: 'colvis',
-        className: 'btn-default',
+        className: 'btn-xs text-info',
         text: colvisButtonTrans,
         exportOptions: {
           columns: ':visible'
