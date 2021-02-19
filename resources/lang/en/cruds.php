@@ -5,6 +5,14 @@ return [
         'title'          => 'إدارة المستخدم',
         'title_singular' => 'إدارة المستخدم',
     ],
+    'management' => [
+        'title'          => 'إدارة الموقع',
+        'title_singular' => 'إدارة المستخدم',
+    ],
+    'office' => [
+        'title'          => 'إدارة المكاتب',
+        'title_singular' => 'إدارة المستخدم',
+    ],
     'permission'     => [
         'title'          => 'أذونات',
         'title_singular' => 'الصلاحية',

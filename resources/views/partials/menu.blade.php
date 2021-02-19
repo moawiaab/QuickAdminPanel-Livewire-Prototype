@@ -15,67 +15,22 @@
                 {{ trans('global.dashboard') }}
             </a>
         </li>
-        <!-- بداية القائمة الادارية -->
         @can('user_management_access')
             <li class="c-sidebar-nav-dropdown {{ request()->is("admin/permissions*") ? "c-show" : "" }} {{ request()->is("admin/roles*") ? "c-show" : "" }} {{ request()->is("admin/users*") ? "c-show" : "" }}">
                 <a class="c-sidebar-nav-dropdown-toggle" href="#">
-                    <i class="fa-fw fas fa-users c-sidebar-nav-icon">
-
+                    <i class="fa-fw fas fa-laptop c-sidebar-nav-icon">
+                        {{-- <i class="fas fa-tools"></i> --}}
                     </i>
-                    {{ trans('cruds.userManagement.title') }}
+                    {{ trans('cruds.management.title') }}
                 </a>
                 <ul class="c-sidebar-nav-dropdown-items">
                     @can('permission_access')
                         <li class="c-sidebar-nav-item">
-                            <a href="{{ route("admin.permissions.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/permissions") || request()->is("admin/permissions/*") ? "c-active" : "" }}">
-                                <i class="fa-fw fas fa-unlock-alt c-sidebar-nav-icon">
+                            <a href="{{ route("office.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/permissions") || request()->is("admin/permissions/*") ? "c-active" : "" }}">
+                                <i class="fa-fw fas fa-map-marked-alt c-sidebar-nav-icon">
 
                                 </i>
-                                {{ trans('cruds.permission.title') }}
-                            </a>
-                        </li>
-                    @endcan
-                    @can('role_access')
-                        <li class="c-sidebar-nav-item">
-                            <a href="{{ route("admin.roles.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/roles") || request()->is("admin/roles/*") ? "c-active" : "" }}">
-                                <i class="fa-fw fas fa-briefcase c-sidebar-nav-icon">
-
-                                </i>
-                                {{ trans('cruds.role.title') }}
-                            </a>
-                        </li>
-                    @endcan
-                    @can('user_access')
-                        <li class="c-sidebar-nav-item">
-                            <a href="{{ route("admin.users.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/users") || request()->is("admin/users/*") ? "c-active" : "" }}">
-                                <i class="fa-fw fas fa-user c-sidebar-nav-icon">
-
-                                </i>
-                                {{ trans('cruds.user.title') }}
-                            </a>
-                        </li>
-                    @endcan
-                </ul>
-            </li>
-        @endcan
- <!-- نهاية القائمة الادارية -->
-  <!-- بداية قائمة المستخدمين -->
-        @can('user_management_access')
-            <li class="c-sidebar-nav-dropdown {{ request()->is("admin/permissions*") ? "c-show" : "" }} {{ request()->is("admin/roles*") ? "c-show" : "" }} {{ request()->is("admin/users*") ? "c-show" : "" }}">
-                <a class="c-sidebar-nav-dropdown-toggle" href="#">
-                    <i class="fa-fw fas fa-users c-sidebar-nav-icon">
-
-                    </i>
-                    {{ trans('cruds.userManagement.title') }}
-                </a>
-                <ul class="c-sidebar-nav-dropdown-items">
-                    @can('permission_access')
-                        <li class="c-sidebar-nav-item">
-                            <a href="{{ route("admin.permissions.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/permissions") || request()->is("admin/permissions/*") ? "c-active" : "" }}">
-                                <i class="fa-fw fas fa-unlock-alt c-sidebar-nav-icon">
-
-                                </i>
-                                {{ trans('cruds.permission.title') }}
+                                {{ trans('cruds.office.title') }}
                             </a>
                         </li>
                     @endcan
@@ -103,7 +58,50 @@
             </li>
         @endcan
 
- <!--  نهاية قائمة المستخدمين -->
+
+        @can('user_management_access')
+        <li class="c-sidebar-nav-dropdown {{ request()->is("admin/permissions*") ? "c-show" : "" }} {{ request()->is("admin/roles*") ? "c-show" : "" }} {{ request()->is("admin/users*") ? "c-show" : "" }}">
+            <a class="c-sidebar-nav-dropdown-toggle" href="#">
+                <i class="fa-fw fas fa-users c-sidebar-nav-icon">
+
+                </i>
+                {{ trans('cruds.userManagement.title') }}
+            </a>
+            <ul class="c-sidebar-nav-dropdown-items">
+                @can('permission_access')
+                    <li class="c-sidebar-nav-item">
+                        <a href="{{ route("admin.permissions.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/permissions") || request()->is("admin/permissions/*") ? "c-active" : "" }}">
+                            <i class="fa-fw fas fa-unlock-alt c-sidebar-nav-icon">
+
+                            </i>
+                            {{ trans('cruds.permission.title') }}
+                        </a>
+                    </li>
+                @endcan
+                @can('role_access')
+                    <li class="c-sidebar-nav-item">
+                        <a href="{{ route("admin.roles.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/roles") || request()->is("admin/roles/*") ? "c-active" : "" }}">
+                            <i class="fa-fw fas fa-briefcase c-sidebar-nav-icon">
+
+                            </i>
+                            {{ trans('cruds.role.title') }}
+                        </a>
+                    </li>
+                @endcan
+                @can('user_access')
+                    <li class="c-sidebar-nav-item">
+                        <a href="{{ route("admin.users.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/users") || request()->is("admin/users/*") ? "c-active" : "" }}">
+                            <i class="fa-fw fas fa-user c-sidebar-nav-icon">
+
+                            </i>
+                            {{ trans('cruds.user.title') }}
+                        </a>
+                    </li>
+                @endcan
+            </ul>
+        </li>
+    @endcan
+
         @can('project_access')
             <li class="c-sidebar-nav-item">
                 <a href="{{ route("admin.projects.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/projects") || request()->is("admin/projects/*") ? "c-active" : "" }}">

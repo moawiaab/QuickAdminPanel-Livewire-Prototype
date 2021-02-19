@@ -46,3 +46,9 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
 
 Route::delete('arrow/destroy', 'ArrowController@massDestroy')->name('arrow.massDestroy');
 Route::resource('arrow', 'ArrowController');
+Route::group(['middleware' => ['auth']], function () {
+    // office
+    Route::delete('office/destroy', 'OfficeController@massDestroy')->name('office.massDestroy');
+    Route::resource('office', 'OfficeController');
+
+});
